@@ -34,7 +34,8 @@ def read_names(csvpath: str | Path) -> dict:
 
 
 def name_pool(names):
-    for name in names:
+    names = list(set(names))  # ensure uniqueness
+    for name in random.sample(names, len(names)):
         yield name
 
 
